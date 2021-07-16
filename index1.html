@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <style> -->
+     <style>
+      
+       .border_class{
+           background-color:rgb(163, 72, 163);
+           color: white;
+           display: none;
+
+       }
+       .border1
+       {
+           background-color: rgb(0, 225, 255);
+           color: white;
+           display: none;
+       }
+       .border2
+       {
+           background-color:rgb(68, 177, 26);
+           color: white
+           ;
+           display: none;
+       }
+       .border3
+       {
+           background-color:rgb(245, 166, 20);
+           color: white
+           ;
+           display: none;
+       }
+       .border4
+       {
+           background-color:rgb(68, 177, 26);
+           color: white
+           ;
+           display: none;
+       }
+       .border5
+       {
+           background-color:aqua;
+           color: white
+           ;
+           display: none;
+       }
+       @media screen and (max-width: 480px) {
+        
+            .border_class{
+           background-color:rgb(163, 72, 163);
+           color: white;
+         
+
+       }
+       .border1
+       {
+           background-color: rgb(0, 225, 255);
+           color: white
+           ;
+       }
+       .border2
+       {
+           background-color:rgb(68, 177, 26);
+           color: white
+           ;
+       }
+       .border3
+       {
+           background-color:rgb(245, 166, 20);
+           color: white
+           ;
+       }
+       .border4
+       {
+           background-color:rgb(68, 177, 26);
+           color: white
+           ;
+       }
+       .border5
+       {
+           background-color:aqua;
+           color: white
+           ;
+       }
+ }
+ 
+ 
+  #hello25
+      {
+       background-image: url("img/COVID-19.jpg");
+       background-size: cover;
+       background-attachment: fixed;
+       border: 5px solid black;
+      }
+    body{
+      background-image: url("img/bg2.png");
+        background-size: cover;
+    }
+     
+   </style>
+</head>
+
+  
+<body onload="fetch()">
+<div class="conainer">
+  <h3 style="color: cyan;text-align: center;font-size: 50px;"> Covid 19 tracker</h3>
+  <div style="text-align: center;font-size: 25px;" >
+    Enter the Name Of the Country ::<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search here......" >
+    
+  </div> 
+  <p id="hello" style="text-align: center;font-size: 40px;">Country::xyz</p>
+  </div>
+ 
+  <div class="container-fluid" id="hello25" style="height: 100%;">
+    <div class="row" ">
+      <div class="col" style="text-align: center; ">
+        <div style="width: 250px;height: 250px; margin: auto; background-color: burlywood; " id="hello1o">
+         <h4 style="padding-top: 40%; font-size: 25px;"  id="hello1">TotalConfirmed:00000</h4>
+        </div>
+       
+      </div>
+      <div class="col" style="text-align: center; ">
+        <div style="width: 250px;height: 250px;  margin: auto; background-color: burlywood;  ">
+          <h4 style="padding-top: 40%;font-size: 25px;"  id="hello2">TotalRecovered:00000</h4>
+        </div>
+                 
+      </div>
+    </div>
+    <div class="row" style="padding-top: 45px;">
+      <div class="col" style="text-align: center; ">
+        <div style="width: 250px;height: 250px; background-color: burlywood;margin: auto;">
+          <h4 style="padding-top: 40%; font-size: 25px;"  id="hello3">TotalDeaths:00000</h4>
+        </div>
+       
+      </div>
+      <div class="col"  style="text-align: center; ">
+        <div style="width: 250px;height: 250px; background-color: burlywood;margin: auto;">
+          <h4 style="padding-top: 40%;font-size: 20px;" id="hello4" >TotalNewRecovered:00000</h4>
+        </div>
+       
+      </div>
+      <div class="col"  style="text-align: center; ">
+        <div style="width: 250px;height: 250px; background-color:burlywood;margin: auto;">
+          <h4 style="padding-top: 40%;font-size: 25px;"id="hello5">NewsDeath:00000</h4>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+  <table class="table table-light" id="tbval" style="display: none;">
+      <thead class="thead-light">
+          <tr>
+             
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td></td>
+          </tr>
+      </tbody>
+  </table>
+ 
+    <script >
+        function fetch()
+        {
+               $.get("https://api.covid19api.com/summary",function(data)
+               {
+                   var tbval=document.getElementById("tbval");
+                  
+                   for(var i=1;i<data["Countries"].length;i++)
+                   {   
+                       /*var x=tbval.insertRow();
+                       
+           
+                       x.insertCell(0);
+                       tbval.rows[i].cells[0].innerHTML=data["Countries"][i-1]['Country'];
+                       // const content = element.innerHTML;
+                       tbval.rows[i].cells[0].style.background="#7a4a91";
+                       tbval.rows[i].cells[0].style.color="#fff";*/
+                  
+
+// Insert a row at the end of the table
+                      let newRow = tbval.insertRow(i);
+
+// Insert a cell in the row at index 0
+                       let newCell = newRow.insertCell(0);
+                       newCell.setAttribute("class", "border_class");
+
+// Append a text node to the cell
+                       let newText = document.createTextNode(data["Countries"][i-1]['Country']);
+                        newCell.appendChild(newText);
+                    
+                        let newCell1 = newRow.insertCell(1);
+                        newCell1.setAttribute("class", "border1");
+
+// Append a text node to the cell
+                        
+                       let newText1 = document.createTextNode(data["Countries"][i-1]['TotalConfirmed']);
+                        newCell1.appendChild(newText1);
+                        
+                        let newCell2 = newRow.insertCell(2);
+                        newCell2.setAttribute("class", "border2");
+
+// Append a text node to the cell
+                        
+                       let newText2 = document.createTextNode(data["Countries"][i-1]['TotalRecovered']);
+                        newCell2.appendChild(newText2);
+                        let newCell3 = newRow.insertCell(3);
+                        newCell3.setAttribute("class", "border3");
+
+// Append a text node to the cell
+                        
+                       let newText3 = document.createTextNode(data["Countries"][i-1]['TotalDeaths']);
+                        newCell3.appendChild(newText3);
+                        let newCell4 = newRow.insertCell(4);
+                        newCell4.setAttribute("class", "border4");
+
+// Append a text node to the cell
+                        
+                       let newText4 = document.createTextNode(data["Countries"][i-1]['NewRecovered']);
+                        newCell4.appendChild(newText4);
+                        let newCell5 = newRow.insertCell(5);
+                        newCell5.setAttribute("class", "border5");
+
+// Append a text node to the cell
+                        
+                       let newText5 = document.createTextNode(data["Countries"][i-1]['NewDeaths']);
+                        newCell5.appendChild(newText5);
+                       
+                    
+
+                   }
+               })
+               
+        }
+
+        function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue,a,b,c,d,e;
+  input =document.getElementById("myInput").value;
+ 
+  filter = input.toUpperCase();
+  
+  table = document.getElementById("tbval");
+ 
+  tr = table.getElementsByTagName("tr");
+ 
+  td = tr[1].getElementsByTagName("td")[0];
+  
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+
+   
+    if (td) {
+      txtValue = td.textContent;
+      
+      txtValue=txtValue.toUpperCase();
+    //   if(txtValue.indexOf(filter)>-1)
+    //   {
+    //       tr[i].style.display="";
+    //   }
+   
+    if(txtValue===filter)
+    {
+        var x=tr[i].getElementsByTagName("td")[0].textContent;
+        a=tr[i].getElementsByTagName("td")[1].textContent;
+        b=tr[i].getElementsByTagName("td")[2].textContent;
+        c=tr[i].getElementsByTagName("td")[3].textContent;
+        d=tr[i].getElementsByTagName("td")[4].textContent;
+        e=tr[i].getElementsByTagName("td")[5].textContent;
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(d);
+        console.log(e);
+       
+        document.getElementById("hello").innerHTML="Country::"+x;
+        document.getElementById("hello1").innerHTML="Total Confirmed:"+a;
+        document.getElementById("hello2").innerHTML="Total Recovered:"+b;
+        document.getElementById("hello3").innerHTML="Total Deaths:"+c;
+
+        document.getElementById("hello4").innerHTML="Total NewRecovered:"+d;
+        document.getElementById("hello5").innerHTML="New Deaths:"+e;
+
+    
+       
+        
+    }
+      else
+      {
+          tr[i].style.display="none";
+      }
+     /*
+    }
+      
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }*/
+   
+     
+    }
+}
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+</body>
+</html>
